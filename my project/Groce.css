@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    padding: 5px 30px;
+    background-color: transparent;
+    transition: all 0.4s ease;
+    color: aliceblue;
+}
+.header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+.header.scrolled .section-right ul li {
+    color: black;
+}
+.header img{
+    width: 150px;
+}
+.section-right ul li{
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: aliceblue;
+}
+.section-right a{
+    color: aliceblue;
+}
+.section-right li:hover {
+    color: #f66605;
+    cursor: pointer;
+}
+.section-1 img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.section-1{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.section-1::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+.section-1 .slide{
+    display: flex;
+    transition:transform 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.section-1 .slide.active {
+    opacity: 1;
+}
+.text {
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Nunito Sans';
+    text-align: center;
+    z-index: 10;
+    background-color: rgb(14,14,15);
+    padding: 40px 30px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translate(-50%, -70%);
+    transition: all 0.8s ease;
+}
+.slide.active .text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    animation: slideDown 1s ease forwards;
+}
+@keyframes slideDown {
+    0% {
+    opacity: 0;
+    transform: translate(-50%, -80%);
+    }
+    100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    }
+}
