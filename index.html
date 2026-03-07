@@ -842,17 +842,17 @@
         }
         setInterval(showSlide,3000);
 
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-        } else {
-        header.classList.remove('scrolled');
-        }
+        
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector(".header");
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         });
 
-const menuBtn = document.getElementById("menu-btn");
+const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
   // Open/Close Menu
@@ -881,6 +881,7 @@ const menuBtn = document.getElementById("menu-btn");
     </script>
 </body>
 </html>
+
 
 
 
